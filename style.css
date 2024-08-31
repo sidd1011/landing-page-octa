@@ -1,0 +1,348 @@
+/*---------------------
+  Universal CSS
+-----------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+/* if we didnot use this we will not be able to center the card verically. */
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  /* same as max-width: 100%; but its a logical property */
+  max-inline-size: 100%;
+  object-fit: cover;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/*---------------
+  Primary Colors
+----------------*/
+
+:root {
+  --color-strong-cyan: hsl(171, 66%, 44%);
+  --color-strong-cyan-dark: hsl(171, 66%, 38%);
+  --color-light-blue: hsl(233, 100%, 69%);
+  --color-light-blue-dark: hsl(233, 70%, 60%);
+}
+
+/*---------------
+  Neutral Colors
+----------------*/
+
+:root {
+  --color-dark-grayish-blue: hsl(210, 10%, 33%);
+  --color-grayish-blue: hsl(201, 11%, 66%);
+}
+
+/*--------
+  Body
+--------*/
+
+.container {
+  width: 85%;
+  margin-inline: auto;
+}
+
+.spacing-top {
+  margin-block-start: 8em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin-block-start-1em {
+  margin-block-start: 1em;
+}
+
+.margin-block-start-2em {
+  margin-block-start: 2em;
+}
+
+.header-bg {
+  background: linear-gradient(to bottom, transparent, rgb(255, 255, 255)),
+    url(./images/bg-header-mobile.png) no-repeat;
+  background-size: cover;
+  /* height: 450px; */
+}
+
+.header-logo {
+  display: inline;
+}
+
+.header-content {
+  text-align: center;
+  padding-top: 8em;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-dark-grayish-blue);
+}
+
+.sub-heading {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--color-dark-grayish-blue);
+}
+
+.paragraph {
+  color: var(--color-grayish-blue);
+  max-inline-size: 55ch;
+  margin-inline: auto;
+}
+
+.header-buttons {
+  margin-block-start: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.btn {
+  color: white;
+  display: inline-block;
+  padding: 1em 0.3em;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: all ease-in-out 0.3s;
+
+}
+
+.btn-cyan:hover{
+  background-color: var(--color-strong-cyan-dark);
+}
+
+.btn-blue:hover{
+  background-color: var(--color-light-blue-dark);
+}
+
+.btn-cyan {
+  background-color: var(--color-strong-cyan);
+  border-bottom: 2px solid var(--color-strong-cyan-dark);
+  box-shadow: 0 3px 10px hsla(171, 66%, 44%, 0.617);
+}
+
+.btn-blue {
+  background-color: var(--color-light-blue);
+  border-bottom: 2px solid var(--color-light-blue-dark);
+  box-shadow: 0 3px 10px hsla(233, 100%, 69%, 0.613);
+}
+
+.keep-track-section-flex {
+  margin-block-start: 4em;
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  width: 85%;
+  margin-inline: auto;
+}
+
+.keep-track-section-points {
+  display: grid;
+  gap: 3em;
+}
+
+.image-devices {
+  margin-inline: auto;
+}
+
+.supercharge-section svg {
+  display: inline;
+  width: 60px;
+  height: 60px;
+}
+
+.supercharge-section h2 {
+  margin-block-start: 0.5em;
+}
+
+.supercharge-section-points {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  margin-block-start: 6em;
+}
+
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6em;
+}
+
+footer{
+  background-color: hsl(220, 18%, 97%);
+  padding-block: 2em;
+}
+
+.footer-logo{
+  width: 60px;
+  margin-inline: auto;
+  margin-block-end: 3em;
+}
+
+.footer-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin-block-start: 3em;
+
+}
+
+footer li{
+  color: var(--color-dark-grayish-blue);
+  margin-block-end: 2em;
+  cursor: pointer;
+}
+
+footer li:hover{
+  color: var(--color-strong-cyan);
+}
+
+.footer-icons li:hover svg path{
+  fill: var(--color-strong-cyan);
+
+}
+
+.footer-flex{
+  display: flex;
+  flex-direction: column;
+}
+
+/*----------------
+  Media Queries
+-----------------*/
+
+@media screen and (min-width: 700px) {
+  .header-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 1em 2em;
+  }
+
+  .keep-track-section-flex {
+    flex-direction: row;
+    gap: 2em;
+    align-items: center;
+    width: auto;
+    margin-inline: unset;
+  }
+
+  .keep-track-section-points {
+    flex-basis: 40%;
+    text-align: left;
+  }
+
+  .keep-track-section-points .paragraph {
+    margin-inline: 0;
+    max-inline-size: 30ch;
+  }
+
+  .image-computer {
+    width: 300px;
+    flex-basis: 60%;
+    position: relative;
+    left: -25px;
+  }
+
+  .logo-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4em;
+    justify-content: space-between;
+  }
+
+  .footer-flex{
+    flex-direction: row;
+    gap: 3em;
+  }
+
+  .footer-icons{
+    align-items: unset;
+    margin-block-start: 0;
+    margin-inline-start: auto;
+  
+  }
+
+  .footer-flex ul{
+    text-align: left;
+  }
+
+}
+
+@media screen and (min-width: 1000px) {
+
+  .spacing-top {
+    margin-block-start: 12em;
+  }
+
+  .container {
+    width: 70%;
+    margin-inline: auto;
+  }
+
+  .keep-track-section-flex {
+    gap: 0em;
+    justify-content: center;
+  }
+
+  .image-computer {
+    max-width: 1000px;
+    flex-basis: 60%;
+    left: -150px;
+    flex-grow: 0;
+  }
+
+  .keep-track-section-points {
+    flex-basis: 30%;
+    gap: 5em;
+  }
+
+  .keep-track-section-points .paragraph {
+    max-inline-size: 35ch;
+  }
+
+  .supercharge-section-points {
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .footer-flex{
+    gap: 4em;
+  }
+}
